@@ -16,7 +16,7 @@ function [hybrid_image,low_frequencies,high_frequencies] = gen_hybrid_image( ima
 filter = fspecial('Gaussian', cutoff_frequency*4+1, cutoff_frequency);
 
 
-baixa_freq = my_imfilter(image1, filter);
+low_frequencies = my_imfilter(image1, filter);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Remove the low frequencies from image2. The easiest way to do this is to
@@ -24,14 +24,14 @@ baixa_freq = my_imfilter(image1, filter);
 % This will give you an image centered at zero with negative values.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-alta_freq = image2 - my_imfilter(image2, filter);
+high_frequencies = image2 - my_imfilter(image2, filter);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Combine the high frequencies and low frequencies
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-hybrid_img_freq = baixa_freq + alta_freq;
+hybrid_image = low_frequencies + high_frequencies;
 
 
-imwrite(baixa_freq, 'imagem-baixa-frequencia.jpeg');
-imshow(hybrid_img_freq);
+imwrite(low_frequencies, 'imagem-baixa-frequencia.jpeg');
+imshow(hybrid_image);
