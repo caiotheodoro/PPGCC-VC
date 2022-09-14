@@ -31,3 +31,7 @@ alta_freq = image2 - my_imfilter(image2, filter);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 hybrid_img_freq = baixa_freq + alta_freq;
+
+
+imwrite(baixa_freq, 'imagem-baixa-frequencia.jpeg');
+imshow(hybrid_img_freq);
