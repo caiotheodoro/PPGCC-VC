@@ -30,4 +30,4 @@ alta_freq = image2 - my_imfilter(image2, filter);
 % Combine the high frequencies and low frequencies
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-hybrid_image = low_frequencies + high_frequencies;
+hybrid_img_freq = baixa_freq + alta_freq;
