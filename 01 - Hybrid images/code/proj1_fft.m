@@ -1,5 +1,5 @@
 function proj1_fft()
-
+pkg load image;
 % Before trying to construct hybrid images, it is suggested that you
 % implement my_imfilter.m and then debug it using proj1_test_filtering.m
 
